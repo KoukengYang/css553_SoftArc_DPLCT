@@ -9,8 +9,10 @@ package DPLCT;
 import c2.framework.*;
 
 /**
- *
- * @author kkeng94
+ * FULL COMMENTS CAN GO LATER ONCE WE ARE 100% FINISHED
+ * THIS CLASS (99%) DONE
+ * 
+ * @author koukeng Yang (Keng)
  */
 public class DataProvLogCompTool
 {
@@ -73,8 +75,8 @@ public class DataProvLogCompTool
         Component storageComponent = new storageComponent();
         Component IBMSPSSParserComponent = new IBMSPSSParserComponent(); //<-------------- NOT WRITTEN YET
         Component MATLABParserComponent = new MATLABParserComponent(); //<-------------- NOT WRITTEN YET
-        Component changeTracParserComponent = new changeTracParserComponent(); //<-------------- NOT WRITTEN YET
-        Component ProvenanceLogCompilerComponent = new ProvenanceLogCompiler(); //<-------------- NOT WRITTEN YET
+        Component changeTracParserComponent = new ChangeTracParserComponent(); //<-------------- NOT WRITTEN YET
+        Component ProvenanceLogCompilerComponent = new ProvenanceLogCompilerComponent(); //<-------------- NOT WRITTEN YET
         Component DPLCTUserInterface = new DPLCTUserInterface(); //<-------------- NOT WRITTEN YET
         
         //Create the connectors

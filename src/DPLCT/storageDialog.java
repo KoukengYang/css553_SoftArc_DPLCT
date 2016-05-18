@@ -13,10 +13,10 @@ import java.util.*;
  */
 public class storageDialog 
 {   
-    private final int MAX_NUM_OF_REQUEST_IN_HISTORY = 10;
+    private final int MAX_NUM_OF_COMPLETED_MESSAGES_IN_HISTORY = 10;
     
     //a queue to hold the ID of previous requests to avoid redo-ing the same msg
-    LinkedList requestCompleted = new LinkedList();
+    private LinkedList requestCompleted = new LinkedList();
     
     //checks for request and sees if it has to do with this class
     //return 1 - if this message applies to this class
@@ -31,26 +31,23 @@ public class storageDialog
             if((r.hasParameter("ID")) && 
                     (this.isDuplicatedRequest(r.name() + (r.getParameter("ID").toString())) == false))
             {
+                //the request has to do with us and it's not been handeld yet
                 return 1;
             }
             else
             {
+                //the request has to do with us BUT it's already been handled
                 return 2;
             }
         }
-        else //this request doesn't apply to us
+        else //this request doesn't apply to us at all
         {
             return 0;
         }
     }
     
-    //accessor for the history of requests completed
-    public final LinkedList getReqHistory()
-    {
-        return requestCompleted;
-    }    
     
-    //check to see if this request has already been done 
+    //check to see if this request has already been done by this component
     private boolean isDuplicatedRequest(String requestID)
     {
         //go through the history log to check requests already completed
@@ -65,13 +62,19 @@ public class storageDialog
         //else the request is not a duplicate and add it to the history list
         
         //pop the oldest request out to make room for this new request in history
-        if(requestCompleted.size() > MAX_NUM_OF_REQUEST_IN_HISTORY)
+        if(requestCompleted.size() > MAX_NUM_OF_COMPLETED_MESSAGES_IN_HISTORY)
         {
             requestCompleted.pollLast();
         }
-        
         //add in the new request to the history of request completed
         requestCompleted.addFirst(requestID);
         return false;
     }
+    
+    
+    //accessor for the history of requests completed
+    public final LinkedList getReqHistory()
+    {
+        return requestCompleted;
+    }    
 }
