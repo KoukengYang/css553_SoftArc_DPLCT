@@ -77,7 +77,7 @@ public class DataProvLogCompTool
         Component MATLABParserComponent = new MATLABParserComponent(); //<-------------- NOT WRITTEN YET
         Component changeTracParserComponent = new ChangeTracParserComponent(); //<-------------- NOT WRITTEN YET
         Component ProvenanceLogCompilerComponent = new ProvenanceLogCompilerComponent(); //<-------------- NOT WRITTEN YET
-        Component DPLCTUserInterface = new DPLCTUserInterface(); //<-------------- NOT WRITTEN YET
+        Component DPLCTUserInterface = new DPLCTUserInterfaceComponent(); //<-------------- NOT WRITTEN YET
         
         //Create the connectors
         Connector C3 = new ConnectorThread("C3");
@@ -133,7 +133,7 @@ public class DataProvLogCompTool
         DataProvLogCompTool.weld(C2,ProvenanceLogCompilerComponent);
         DataProvLogCompTool.weld(ProvenanceLogCompilerComponent, C1);
         DataProvLogCompTool.weld(C1,DPLCTUserInterface);
-        
+              
         //Start the application
         DataProvLogCompTool.start();
     }
