@@ -9,7 +9,7 @@ package DPLCT;
  *
  * @author Koukeng Yang
  */
-public class DPLCTUserInterface 
+public class IBMSPSSParser 
 {
     //TO-DO
 }
