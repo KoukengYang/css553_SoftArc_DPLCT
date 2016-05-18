@@ -72,12 +72,12 @@ public class DataProvLogCompTool
         Architecture DataProvLogCompTool = new SimpleArchitecture("DataProvLogCompTool");
         
         //Create the components
-        Component storageComponent = new storageComponent();
-        Component IBMSPSSParserComponent = new IBMSPSSParserComponent(); //<-------------- NOT WRITTEN YET
-        Component MATLABParserComponent = new MATLABParserComponent(); //<-------------- NOT WRITTEN YET
-        Component changeTracParserComponent = new ChangeTracParserComponent(); //<-------------- NOT WRITTEN YET
-        Component ProvenanceLogCompilerComponent = new ProvenanceLogCompilerComponent(); //<-------------- NOT WRITTEN YET
-        Component DPLCTUserInterface = new DPLCTUserInterfaceComponent(); //<-------------- NOT WRITTEN YET
+        Component storageComponent = new storageComponent(); //<------------------------------95% Completed
+        Component IBMSPSSParserComponent = new IBMSPSSParserComponent(); //<------------------50%
+        Component MATLABParserComponent = new MATLABParserComponent(); //<--------------------50%
+        Component changeTracParserComponent = new ChangeTracParserComponent(); //<------------50% 
+        Component ProvenanceLogCompilerComponent = new ProvenanceLogCompilerComponent(); //<--50%
+        Component DPLCTUserInterface = new DPLCTUserInterfaceComponent(); //<-----------------50%
         
         //Create the connectors
         Connector C3 = new ConnectorThread("C3");

@@ -99,7 +99,7 @@ public class storage
             
             for(int i = 0; i < theParsedFileDataToSave.size(); i++)
             {
-                String nextLine = theParsedFileDataToSave.get(i);
+                String nextLine = new String(theParsedFileDataToSave.get(i));
                 output.write(nextLine);
             }
             
@@ -124,7 +124,7 @@ public class storage
             
             for(int i = 0; i < theCompletedFileDataToSave.size(); i++)
             {
-                String nextLine = theCompletedFileDataToSave.get(i);
+                String nextLine = new String(theCompletedFileDataToSave.get(i));
                 output.write(nextLine);
             }
             

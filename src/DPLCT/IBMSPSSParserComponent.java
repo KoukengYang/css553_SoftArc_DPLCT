@@ -21,11 +21,17 @@ public class IBMSPSSParserComponent extends ComponentThread
         super.create("IBMParser", FIFOPort.class);
     }
 
+    public void start()
+    {
+        //start the component with the other components
+        super.start();
+    }
+    
     //------------------------------------------------------------------------//
     //Initialize the internal parts of the component
     //------------------------------------------------------------------------//
     //-A list of name for this component 
-    private String[] thisComponentNames = {"IBMPaser","Parser"};
+    private String[] thisComponentNames = {"IBMParser","Parser"};
     
     //-The dialog class checking messages for this component
     private IBMSPSSParserDialog IBMParserDialog = new IBMSPSSParserDialog(); 
@@ -44,22 +50,14 @@ public class IBMSPSSParserComponent extends ComponentThread
 
     //------------------------------------------------------------------------//
     
-    public void start()
-    {
-        //start the component with the other components
-        super.start();
-    }
-    
-
     //------------------------------------------------------------------------//
     //Methods of this component
     //------------------------------------------------------------------------//
-    //handle the requests here
+    //handle the requests here DONE
     protected void handle(Request r)
     {
         //USED FOR TEST 1 ONLY--------------------------------------------------
         System.out.println("The request Test 1 got to the IBMSPSSParser");
-        
         //USED FOR TEST 1 ONLY--------------------------------------------------
         
         if(IBMParserDialog.checkRequest(r, thisComponentNames) == 1)
@@ -81,6 +79,7 @@ public class IBMSPSSParserComponent extends ComponentThread
         }
     }
     
+    //TO-DO <---------------------------------------------------------------------------TO-DO
     private void interpretRequest(Request r)
     {
 //        String functionToInvoke = r.getParameter("functionToInvoke").toString();
@@ -96,7 +95,7 @@ public class IBMSPSSParserComponent extends ComponentThread
     }
     
     
-    //handle the notifications here
+    //handle the notifications here DONE
     protected void handle(Notification n)
     {
         if(IBMParserDialog.checkNotification(n, thisComponentNames) == 1)
@@ -118,6 +117,7 @@ public class IBMSPSSParserComponent extends ComponentThread
         }
     }
     
+    //TO-DO <---------------------------------------------------------------------------TO-DO
     private void interpretNotification(Notification n)
     {
 //        String functionToInvoke = n.getParameter("functionToInvoke").toString();
